@@ -1,0 +1,10 @@
+node_modules/
+session/
+.env
+assets
+dist
+downloads
+.vscode
+log
+*.tsbuildinfo
+temp
