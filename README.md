@@ -1,51 +1,76 @@
-# telegram-media-downloader
+# Telegram Media Downloader
 
-一个轻量的，基于Typescript编写的跨平台telegram机器人，可以下载消息中2GB以内的媒体文件。
+<p align="center">
+  <img src="https://img.shields.io/github/license/johnhom1024/telegram-media-downloader">
+  <img src="https://img.shields.io/badge/language-typescript-blue.svg">
+  <img src="https://img.shields.io/badge/platform-cross--platform-lightgrey">
+</p>
 
-## 支持的功能
+一个轻量的，基于TypeScript编写的跨平台Telegram机器人，可以下载消息中2GB以内的媒体文件。
 
-- 下载2GB内的媒体文件
-- 暂停某个正在下载的媒体文件
-- 控制并发下载媒体文件的数量
-- 实时显示下载速度
+## ✨ 特性
 
-还有更多功能等待开发中...
+- 🚀 支持下载2GB以内的媒体文件
+- ⏸️ 支持暂停/恢复下载功能
+- 🔄 支持并发下载，可配置并发数
+- 📊 实时显示下载速度
+- 🔗 支持通过消息链接下载
+- 💬 支持回复消息重新下载
 
-## 本地调试
+## 🛠️ 技术栈
 
-安装依赖
+- TypeScript
+- [GramJS](https://github.com/gram-js/gramjs) - Telegram客户端库
+- Node.js
 
+## 📦 安装
+
+### 环境要求
+
+- Node.js >= 14
+- pnpm
+
+### 安装步骤
+
+1. 克隆项目
+```bash
+git clone https://github.com/johnhom1024/telegram-media-downloader.git
+cd telegram-media-downloader
+```
+
+2. 安装依赖
 ```bash
 pnpm install
 ```
 
-启动
+## ⚙️ 配置
 
-```bash
-pnpm start
-```
-
-## 配置信息
-
-程序启动时会读取`config.yaml`文件，配置文件如下：
+在项目根目录创建`config.yaml`文件，配置如下：
 
 ```yaml
-# 机器人token
+# Telegram API配置
 api_hash: "你的api_hash"
 api_id: "你的api_id"
 bot_token: "你的机器人token"
-# 下载文件的保存路径
-save_path: "./downloads"
-# 下载文件的最大并发数
-max_parallel_download: 5
-# 代理信息 如果不需要代理，则不需要填写此项
+
+# 下载配置
+save_path: "./downloads"  # 下载文件保存路径
+max_parallel_download: 5  # 最大并发下载数
+
+# 代理配置（可选）
 # proxy:
 #   socks_type: 5
 #   ip: "192.168.31.210"
 #   port: 7221
 ```
 
-## Todo
+## 🚀 启动
+
+```bash
+pnpm start
+```
+
+## 🗺️ 路线图
 
 - [x] 打包成docker镜像
 - [x] 显示下载速度
@@ -55,15 +80,21 @@ max_parallel_download: 5
 - [x] 日志自动下载到本地
 - [x] 改用流的方式下载
 - [x] 接入pm2
-- [ ] 启动机器人后发送消息给所有者
-- [ ] 设置机器人的指令
 - [x] 能够直接针对某个媒体文件暂停或者取消下载
 - [x] 能够回复某个媒体文件，识别到之后重新下载
+- [ ] 启动机器人后发送消息给所有者
+- [ ] 设置机器人的指令
 
-如果你也想贡献代码，欢迎来提Pr。
+## 🤝 贡献
 
-## 感谢
+欢迎提交PR和Issue！
 
-[gramjs](https://github.com/gram-js/gramjs)
+## 📄 开源协议
 
-[telegram_media_downloader](https://github.com/tangyoha/telegram_media_downloader)
+本项目采用 [ISC](LICENSE) 协议。
+
+## 🙏 致谢
+
+- [gramjs](https://github.com/gram-js/gramjs)
+- [grammY](https://github.com/grammyjs/grammY)
+- [telegram_media_downloader](https://github.com/tangyoha/telegram_media_downloader)
